@@ -3,54 +3,43 @@ using System.Collections.Generic;
 
 namespace Corporate_Class
 {
-    public class Company
-    {
-        /*
-            Some readonly properties
-        */
-        public string Name { get; }
-        public DateTime CreatedOn { get; }
-
-        // Create a property for holding a list of current employees
-
-        public List<Employee> employees { get; set; } = new List<Employee>();
-
-        // Create a method that allows external code to add an employee
-        public void addEmployee(string name)
-        {
-            var newEmployee = new Employee(name, "Janitor", DateTime.Today);
-            employees.Add(newEmployee);
-        }
-        // Create a method that allows external code to remove an employee
-        public void subEmployee(string name)
-        {
-            var term = new Employee(name, "Clerk", DateTime.Today);
-            employees.Remove(term);
-        }
-        /*
-            Create a constructor method that accepts two arguments:
-                1. The name of the company
-                2. The date it was created
-    
-            The constructor will set the value of the public properties
-        */
-        public Company(string name)
-        {
-
-        }
-    }
+   
     class Program
     {
+        public static List<Employee> CodeOrDieEmployee { get; private set; }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter employee name...");
-            var input = Console.ReadLine();
-            var company = new Company("cool company");
+            Company CodeOrDie = new Company();
 
-            company.addEmployee(input);
-            for (var i = 0; i < company.employees.Count; i++)
+            Employee ron = new Employee();
+            ron.firstName = "Ron";
+            ron.lastName = "Jenkins";
+            ron.startDate = "02-31-07";
+
+            Employee janice = new Employee();
+            janice.firstName = "Janice";
+            janice.lastName = "Wilkerson";
+            janice.startDate = "03-19-12";
+
+            Employee david = new Employee();
+            david.firstName = "David";
+            david.lastName = "Ransom";
+            david.startDate = "09-31-19";
+
+            List<Employee> CodOrDieEmployee = new List<Employee>();
+
+            CodOrDieEmployee.Add(ron);
+            CodOrDieEmployee.Add(janice);
+            CodOrDieEmployee.Add(david);
+
+            CodeOrDie.employees = CodeOrDieEmployee;
+
+            foreach (var em in CodOrDieEmployee)
             {
-                Console.WriteLine(company.employees[i].name);
+                Console.WriteLine(em.firstName);
+                Console.WriteLine(em.lastName);
+                Console.WriteLine(em.startDate);
             }
         }
 

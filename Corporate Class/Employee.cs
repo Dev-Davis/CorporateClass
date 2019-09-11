@@ -4,15 +4,15 @@ namespace Corporate_Class
 {
     public class Employee
     {
-        public string name;
-        public string jobTitle;
-        public DateTime dateTime;
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string jobTitle { get; set; }
+        public string startDate { get; set; }
 
-        public Employee(string name, string jobTitle, DateTime dateTime)
+        public Employee()
         {
-            this.name = name;
-            this.jobTitle = jobTitle;
-            this.dateTime = dateTime;
+           
+
         }
     }
 }

@@ -4,7 +4,13 @@ using System.Text;
 
 namespace Corporate_Class
 {
-    class Company
+    public class Company
     {
+        public Company()
+        {
+
+        }
+
+        public List<Employee> employees { get; internal set; }
     }
 }
