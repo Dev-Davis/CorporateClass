@@ -3,16 +3,11 @@ using System.Collections.Generic;
 
 namespace Corporate_Class
 {
-    public class Company
-    {
-        public string Name { get; }
-        public DateTime CreatedOn { get; }
-
-        public List<Employee> employees { get; set; }
-
-    }
+   
     class Program
     {
+        public static List<Employee> CodeOrDieEmployee { get; private set; }
+
         static void Main(string[] args)
         {
             Company CodeOrDie = new Company();
@@ -38,16 +33,13 @@ namespace Corporate_Class
             CodOrDieEmployee.Add(janice);
             CodOrDieEmployee.Add(david);
 
-            CodeOrDie.employees = CodOrDieEmployee;
+            CodeOrDie.employees = CodeOrDieEmployee;
 
-            foreach (Employee em in CodOrDieEmployee)
+            foreach (var em in CodOrDieEmployee)
             {
                 Console.WriteLine(em.firstName);
                 Console.WriteLine(em.lastName);
                 Console.WriteLine(em.startDate);
-            }
-            {
-
             }
         }
 
